@@ -5,8 +5,10 @@ pipeline {
             steps {
                 sh 'npm --version'
             }
-        stage('logger') {sh "logger findme"}
-        stage('write_file') {sh "echo>findme findme"}
+        stage('logger') {
+            steps {sh "logger findme"} }
+        stage('write_file') {#
+            steps {sh "echo>findme findme"} }
         }
     }
 }
