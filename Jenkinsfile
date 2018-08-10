@@ -7,7 +7,7 @@ pipeline {
             }
         stage('logger') {
             steps {sh "logger findme"} }
-        stage('write_file') {#
+        stage('write_file') {
             steps {sh "echo>findme findme"} }
         }
     }
