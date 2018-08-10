@@ -1,10 +1,5 @@
-pipeline {
-    agent { docker { image 'node:6.3' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'npm --version'
-            }
-        }
-    }
+#!/groovy
+
+node('master') {
+  echo "Hello world! I am node ${env.NODE_NAME}"
 }
