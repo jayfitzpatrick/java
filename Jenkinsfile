@@ -4,7 +4,6 @@
           stage('services')
             steps {sh 'sudo service docker start'
           agent { docker { image 'node:6.3' } }
-} }
         stage('build') {
             steps {sh 'npm --version'} }
         stage('logger') {
@@ -14,3 +13,5 @@
         stage('cleanup_services') {
                 steps { sh 'sudo service docker stop'} }
     }
+  } 
+}
