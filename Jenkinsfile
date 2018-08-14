@@ -1,4 +1,5 @@
 pipeline {
+  node () {
 stage('services') {
     steps {sh 'sudo service docker start'}}
 agent { docker { image 'node:6.3' } }
@@ -11,4 +12,5 @@ agent { docker { image 'node:6.3' } }
             steps { sh 'sudo service docker stop'
             sh "echo>findme findme"} }
     }
+  }
 }
