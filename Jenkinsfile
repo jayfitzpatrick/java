@@ -1,6 +1,7 @@
   node  {
 stage('services') {
-    steps {sh 'sudo service docker start'}}
+      sh 'sudo service docker start'
+          }
 agent { docker { image 'node:6.3' } }
     stages {
         stage('build') {
