@@ -1,7 +1,8 @@
   pipeline  {
     agent none
       stages {
-          stage('services') {sh 'sudo service docker start'
+          stage('services')
+            steps {sh 'sudo service docker start'
           agent { docker { image 'node:6.3' } }
 } }
         stage('build') {
