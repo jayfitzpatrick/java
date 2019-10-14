@@ -1,6 +1,12 @@
 pipeline {
     agent none
     stages {
+        stage('Docker Test') {
+            agent { docker 'hello-world' }
+            steps {
+                echo 'Hello from Docker'
+            }
+       }
         stage('Example Build') {
             agent { docker 'maven:3-alpine' }
             steps {
